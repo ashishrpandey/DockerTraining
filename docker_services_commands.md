@@ -1,3 +1,4 @@
+Using Docker Stack tool to deploy services 
 
 	docker stack ls              # List all running applications on this Docker host
 	docker stack deploy -c <composefile> <appname>  # Run the specified Compose file
