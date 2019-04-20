@@ -5,11 +5,11 @@
         docker attach <container_id>
 
 ## in the container -->
-apt update
-apt-get install apache2
-service apache2 start
-apt-get install elinks
-elinks http://localhost:80/index.html   ## this will show the website on command line interface itself
+        apt update
+        apt-get install apache2
+        service apache2 start
+        apt-get install elinks
+        elinks http://localhost:80/index.html   ## this will show the website on command line interface itself
 
 ## copy your web content in /var/www/html directory
 
