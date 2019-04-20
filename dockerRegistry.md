@@ -1,5 +1,6 @@
 # Running a Registry Container in Linux
-## The Docker Engine needs to be explicitly setup to use HTTP for the insecure registry. 
+
+The Docker Engine needs to be explicitly setup to use HTTP for the insecure registry. 
 ## Edit or create /etc/docker/docker file:
 	
 	$ sudo vi /etc/docker/docker
@@ -56,4 +57,19 @@ Create a directory on the host machine for storing registry data
 
 	$ docker tag hello-world localhost:5000/hello-world
 	$ docker push localhost:5000/hello-world
+## Check the content of registry-data on the host 
+	
+	$ tree registry-data
 
+
+## Remove the local registry 
+	
+	$  sudo docker kill registry
+	$  sudo docker rm registry
+
+## Check again the content of registry-data on the host 
+
+It shall still show the content of the registry 
+
+	$ tree registry-data
+	
