@@ -1,0 +1,17 @@
+Docker monitoring:
+
+docker history --no-trunc <imagename> 
+
+Practice on 
+docker events
+docker events --filtter event=attach --filtter event=stop --filtter event=die
+look for all the filters
+
+
+Docker backup of image
+docker save --output centos.latest.tar centos:latest
+docker save centos:latest > centos-latest.tar 
+check the content of .tar file by running 
+tar tvf centos-latest.tar 
+docker load <centos-latest.tar
+docker load --input centos-latest.tar

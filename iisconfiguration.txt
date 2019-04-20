@@ -1,0 +1,19 @@
+1, Override the Entrypoint with and custom bootstrapper
+
+    entrypoint: powershell C:\\start.ps1
+2, Add two environments variables
+
+SSL_THUMPRINT: [THUMPRINT TO USE FOR SSL/TLS]
+SITENAME: [PATH TO YOUR SITE INSIDE CONTAINER]
+
+
+Bootstrapper start.ps1
+
+$securepfxpass = (Get-Content -Path c:\${env:SITENAME}\cert.password.txt) |ConvertTo-SecureString -AsPlainText -Force
+Import-PfxCertificate -Password $securepfxpass -CertStoreLocation Cert:\LocalMachine\My -FilePath c:\${env:SITENAME}\cert.pfx 
+$binding = New-WebBinding -Name ${env:SITENAME} -Protocol https -IPAddress * -Port 443;
+$binding = Get-WebBinding -Name ${env:SITENAME} -Protocol https;
+$binding.AddSslCertificate(${env:SSL_THUMPRINT}, "my");
+
+Start-Process -FilePath C:\ServiceMonitor.exe -ArgumentList w3svc -Wait -PassThru
+This way we can have the same image in Production and Test. You just inject your secret for cert and cert password into the location you specified in your bootstrapper
