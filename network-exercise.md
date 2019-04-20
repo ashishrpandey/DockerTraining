@@ -1,11 +1,11 @@
 ## Without custom network
- using only default bridge 
+Using only default bridge 
 
-show current networks
+Show current networks
 
 	$ docker network ls
 
-run 2 containers with default bridge network
+Run 2 containers with default bridge network
 
 	$ docker run -dit --name alpine1 alpine ash
 
@@ -24,15 +24,15 @@ Attach to a running container
 	$ip addr show
 
 	$ping -c 2 google.com
-Success
+	Success
 
 
 	$ping -c 2 <ipaddr of alpine2>
-Success
+	Success
 
 
 	$ping -c 2 alpine2
-Fails
+	Fails
 
 // Remove all the containers
 
