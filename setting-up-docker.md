@@ -1,29 +1,30 @@
-$ sudo yum install -y yum-utils
-$ sudo yum-config-manager \
+## For a normal centos/RHEL machine
+
+
+	$ sudo yum install -y yum-utils
+	$ sudo yum-config-manager \
     --add-repo \
     https://download.docker.com/linux/centos/docker-ce.repo
-$ sudo yum install docker
-$ sudo systemctl start docker
+	$ sudo yum install docker
+	$ sudo systemctl start docker
 
 
-
-***********For ec2 instance ************
+## For Amazon linux 2 - ec2 instances 
 connect to ec2 instance through putty
-$ sudo su
-$ yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
-$ yum install docker
-$ service docker start
+	$ sudo su
+	$ yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
+	$ yum install docker
+	$ service docker start
 
 ## To check whether it has worked correctly 
-$ docker run hello-world
-It shall give following output:
+	$ docker run hello-world
 
-"""
-Unable to find image 'hello-world:latest' locally
-latest: Pulling from library/hello-world
-78445dd45222: Pull complete
-Digest: sha256:c5515758d4c5e1e838e9cd307f6c6a0d620b5e07e6f927b07d05f6d12a1ac8d7
-Status: Downloaded newer image for hello-world:latest
+	"""
+	Unable to find image 'hello-world:latest' locally
+	latest: Pulling from library/hello-world
+	78445dd45222: Pull complete
+	Digest: sha256:c5515758d4c5e1e838e9cd307f6c6a0d620b5e07e6f927b07d05f6d12a1ac8d7
+	Status: Downloaded newer image for hello-world:latest
 
 Hello from Docker!
 This message shows that your installation appears to be working correctly.
