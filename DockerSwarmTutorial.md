@@ -1,4 +1,4 @@
-At Leader:
+## At Leader:
 
 docker swarm init
 
@@ -26,7 +26,7 @@ docker service ps web
 docker node ls
 docker node inspect node2 --pretty
 
-  AT worker node2
+## AT worker node2
 
 docker swarm join --token SWMTKN-1-3jqt6ertjmu2to60vu0ddraelkpne9shzth3igefxk85iow7b0-4cscwbsrtskgpalsumcivpl8u 192.168.0.18:2377
 docker ps -a
