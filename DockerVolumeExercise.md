@@ -1,4 +1,6 @@
- - Create a directory in your 'user' home directory called 'docker'. 
+## Using Docker Volume
+
+- Create a directory in your 'user' home directory called 'docker'. 
  - Within that directory, create another directory called 'mydata'. 
  - Within mydata, create a file called 'zekeData.txt' containing any text message you want.
 
