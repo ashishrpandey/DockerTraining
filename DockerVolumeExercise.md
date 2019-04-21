@@ -1,29 +1,29 @@
- 1. Create a directory in your 'user' home directory called 'docker'. 
- Within that directory, create another directory called 'mydata'. 
- Within mydata, create a file called 'zekeData.txt' containing any text message you want.
+ - Create a directory in your 'user' home directory called 'docker'. 
+ - Within that directory, create another directory called 'mydata'. 
+ - Within mydata, create a file called 'zekeData.txt' containing any text message you want.
 
-    [user@zekelabs ~]$ mkdir docker
-    [user@zekelabs ~]$ cd docker
-    [user@zekelabs ~]$ mkdir mydata
-    [user@zekelabs ~]$ cd mydata
-    [user@zekelabs mydata]$ ll
-    total 0
-    [user@zekelabs mydata]$ echo "This is data originally kept in a file at Docker host" >> zekeData.txt
-    [user@zekelabs mydata]$ ll
-    total 4
-    -rw-rw-r-- 1 user user 18 Dec 15 15:21 zekeData.txt
-    [user@zekelabs mydata]$ cd ..
-    [user@zekelabs docker]$ ll
-    total 0
-    drwxrwxr-x 2 user user 23 Dec 15 15:21 mydata
+        [user@zekelabs ~]$ mkdir docker
+        [user@zekelabs ~]$ cd docker
+        [user@zekelabs ~]$ mkdir mydata
+        [user@zekelabs ~]$ cd mydata
+        [user@zekelabs mydata]$ ll
+        total 0
+        [user@zekelabs mydata]$ echo "This is data originally kept in a file at Docker host" >> zekeData.txt
+        [user@zekelabs mydata]$ ll
+        total 4
+        -rw-rw-r-- 1 user user 18 Dec 15 15:21 zekeData.txt
+        [user@zekelabs mydata]$ cd ..
+        [user@zekelabs docker]$ ll
+        total 0
+        drwxrwxr-x 2 user user 23 Dec 15 15:21 mydata
 
 
 2. Create a docker container name 'local_vol' from the 'centos:6' image. 
-The container should be created in interactive mode, 
-attached to the current terminal and running the bash shell.
+- The container should be created in interactive mode, 
+- attached to the current terminal and running the bash shell.
 
-Finally create the container with a volume (or directory) called 'containerDirectory' 
-so that the system will automatically create the directory/mount when the container starts.
+- Finally create the container with a volume (or directory) called 'containerDirectory' 
+- so that the system will automatically create the directory/mount when the container starts.
 
     [user@zekelabs docker]$ docker run -it --name="local_vol" -v /containerDirectory centos:6 /bin/bash
 
@@ -55,8 +55,8 @@ so that the system will automatically create the directory/mount when the contai
  
 
 4. Exit the container. This time, lets create another container called 'remote_vol'
- with the same container configuration except when creating the volume in the container, 
-link the volume name 'mydata' to the underlying host directory structure created in Step #1.
+ - with the same container configuration except when creating the volume in the container, 
+ - link the volume name 'mydata' to the underlying host directory structure created in Step #1.
 
         [user@zekelabs docker]$ docker run -it --name="remote_vol" -v /home/user/docker/mydata:/mydata centos:6 /bin/bash
         [root@fnasfavdvadjv /]#
