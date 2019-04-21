@@ -25,9 +25,9 @@
 - Finally create the container with a volume (or directory) called 'containerDirectory' 
 - so that the system will automatically create the directory/mount when the container starts.
 
-    [user@zekelabs docker]$ docker run -it --name="local_vol" -v /containerDirectory centos:6 /bin/bash
+      [user@zekelabs docker]$ docker run -it --name="local_vol" -v /containerDirectory centos:6 /bin/bash
 
-    [root@191131068f8c /]#
+      [root@191131068f8c /]#
 
 
 3. List the filesystems within the container, specifically looking for the volume/directory that was added to the container during creation.
