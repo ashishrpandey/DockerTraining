@@ -6,7 +6,7 @@
 
 ## in the container -->
         apt update
-        apt-get install apache2
+        apt-get install apache2 -y
         service apache2 start
         apt-get install elinks
         elinks http://localhost:80/index.html   ## this will show the website on command line interface itself
