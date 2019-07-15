@@ -1,15 +1,15 @@
 Create a volume:
 
-      docker volume create my-vol
+      docker volume create nginx-vol
 
 List and inspect volumes:
       
       docker volume ls
-      docker volume inspect my-vol
+      docker volume inspect nginx-vol
       
 Remove a volume:
 
-      docker volume rm my-vol
+      docker volume rm nginx-vol
       
       
 Start a container with a volume
