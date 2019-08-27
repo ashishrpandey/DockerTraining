@@ -11,7 +11,7 @@ services:
       restart_policy:
         condition: on-failure
     ports:
-      - "80:80"
+      - "8000:80"
     networks:
       - alpine-net
 networks:
