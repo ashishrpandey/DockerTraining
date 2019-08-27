@@ -2,7 +2,7 @@ version: "3"
 services:
   web:
     # replace username/repo:tag with your name and image details
-    image: username/repository:tag
+    image: nginx:latest
     deploy:
       replicas: 5
       resources:
@@ -14,6 +14,6 @@ services:
     ports:
       - "80:80"
     networks:
-      - webnet
+      - alpine-net
 networks:
-  webnet:
+  alpine-net:
