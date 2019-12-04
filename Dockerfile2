@@ -1,0 +1,17 @@
+FROM centos:6
+
+LABEL maintainer="ashish.pandey@zekelabs.com"
+
+RUN     yum install -y httpd net-tools && \
+  mkdir -p /run/httpd && \
+  rm -rf /run/http/* /tmp/httpd*
+
+CMD echo "This is a Dockerfile test message"
+
+ENV ENVIRONMENT=”production”
+
+EXPOSE 80
+
+CMD  ["-D","FOREGROUND"]
+
+ENTRYPOINT ["apachectl"]
