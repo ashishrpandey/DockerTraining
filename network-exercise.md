@@ -71,3 +71,22 @@ Attach to a running container
 Ping from one container to others by name and see the connectivity
 ping from alpine4 which is connected to both
 
+## Extras
+
+Compare the output of following commands: 
+
+	docker run -it alpine ip addr show
+and
+
+	docker run -it --net=host alpine ip addr show
+	
+By changing the namespace to host, the process will have access to the host machines network interface.
+
+
+This is similar to the process namespace
+Compare the output of the two commands given below 
+
+	docker run -it alpine ps aux
+	docker run -it --pid=host alpine ps aux
+	
+	
