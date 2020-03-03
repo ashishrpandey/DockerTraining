@@ -89,4 +89,7 @@ Compare the output of the two commands given below
 	docker run -it alpine ps aux
 	docker run -it --pid=host alpine ps aux
 	
-	
+Check the routing table rules using
+
+	netstat -r 
+
