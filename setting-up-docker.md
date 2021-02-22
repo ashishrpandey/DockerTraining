@@ -11,6 +11,7 @@
 
 ## For Amazon linux 2 - ec2 instances 
 connect to ec2 instance through putty
+
 	$ sudo su
 	$ yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
 	$ yum install docker
